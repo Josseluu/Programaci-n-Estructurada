@@ -14,7 +14,7 @@ int main() {
     estudiante1.edad = 20;
     estudiante1.promedio = 8.5;
 
-    // Acceder a los atributos del estudiante
+
     std::cout << "Nombre: " << estudiante1.nombre << std::endl;
     std::cout << "Edad: " << estudiante1.edad << std::endl;
     std::cout << "Promedio: " << estudiante1.promedio << std::endl;
