@@ -9,20 +9,23 @@ struct Estudiante {
     Estudiante(const std::string& nombre, int edad) : nombre(nombre), edad(edad) {}
 };
 
+bool esNombreIgual(const Estudiante& estudiante, const std::string& nombre) {
+    return estudiante.nombre == nombre;
+}
+
+void eliminarEstudiantePorNombre(std::vector<Estudiante>& estudiantes, const std::string& nombre) {
+    auto it = std::remove_if(estudiantes.begin(), estudiantes.end(),
+                             [nombre](const Estudiante& estudiante) { return esNombreIgual(estudiante, nombre); });
+
+    estudiantes.erase(it, estudiantes.end());
+}
+
 void imprimirEstudiantes(const std::vector<Estudiante>& estudiantes) {
     std::cout << "Lista de Estudiantes:\n";
     for (const auto& estudiante : estudiantes) {
         std::cout << "Nombre: " << estudiante.nombre << ", Edad: " << estudiante.edad << "\n";
     }
     std::cout << "\n";
-}
-
-void eliminarEstudiantePorNombre(std::vector<Estudiante>& estudiantes, const std::string& nombre) {
-    auto it = std::remove_if(estudiantes.begin(), estudiantes.end(),
-                             [nombre](const Estudiante& estudiante) {
-                                 return estudiante.nombre == nombre;
-                             });
-    estudiantes.erase(it, estudiantes.end());
 }
 
 int main() {
