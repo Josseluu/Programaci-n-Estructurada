@@ -8,7 +8,7 @@ struct Estudiante {
 };
 
 int main() {
-    // Ejemplo de creación e inicialización de un objeto Estudiante
+
     Estudiante estudiante1;
     estudiante1.nombre = "Juan Perez";
     estudiante1.edad = 20;
