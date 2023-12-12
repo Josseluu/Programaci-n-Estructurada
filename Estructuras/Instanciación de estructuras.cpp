@@ -10,8 +10,6 @@ struct Estudiante {
 int main() {
 
     Estudiante estudiante1;
-
-
     estudiante1.nombre = "Ana García";
     estudiante1.edad = 22;
     estudiante1.promedio = 9.2;
